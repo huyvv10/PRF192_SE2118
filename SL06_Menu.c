@@ -29,7 +29,7 @@ int UCLN(int a, int b){
 }
 
 int UCLN2(int a, int b){
-	return a > b ? a%b : b%a;
+	return b==0 ? a : UCLN2(b, a%b);
 }
 
 //Tim boi so chung nho nhat cua a va b
@@ -48,7 +48,7 @@ int main() {
 				printf("Chuong trinh tim USCLN\n");
 				printf("Input a = "); scanf("%d", &a);
 				printf("Input b = "); scanf("%d", &b);
-				int result = UCLN2(a,b);
+				int result = UCLN(a,b);
 				printf("USCNL cua %d va %d la: %d", a, b, result);
 				break;
 			case 2:
